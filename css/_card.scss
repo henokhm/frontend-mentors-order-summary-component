@@ -1,23 +1,104 @@
-/*
-
-classes:
-
-container
-card
-card__image
-card__title
-card__body
-card__order-details
-  card__music-icon    
-  (Note: it's not required to nest like this --> card__order-details__music-icon)
-  card__plan-type
-  card__plan-cost
-  card__change-plan
-card__cta
-card__cancel-ord
-
-*/
-
 .card {
-  background: var(--clr-primary-600);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 500px;
+
+  border-radius: 2em;
+  overflow: hidden;
+  background: #fff;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 2em;
+
+  }
+
+  &__body {
+    font-weight: 400;
+    line-height: 1.4;
+    width: 80%;
+    margin: 1em auto;
+    opacity: 0.6;
+  }
+
+  &__order-details {
+    background: var(--clr-neutral-400);
+    margin: 1em;
+    padding: 1em; 
+    border-radius: 1em;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:   
+      "music-icon    plan-type    change-plan"
+      "music-icon    plan-cost    change-plan"
+    ;
+  }
+
+  &__music-icon {
+    grid-area:music-icon;
+    justify-self: center;
+    align-self: center;
+  }
+
+  &__plan-type{
+    grid-area:plan-type;
+    justify-self: start;
+    margin: 0;
+    padding-left: 1em;
+    font-size: 1em;
+  }
+  
+  &__plan-cost{ 
+    grid-area:plan-cost;
+    justify-self: start;
+    margin: 0;
+    padding-left: 1em;
+    opacity: 0.5;
+  }
+  
+  &__change-plan{
+    grid-area:change-plan;
+    justify-self: center;
+    align-self: center;
+    color: var(--clr-primary-600);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  &__cta {
+    display: inline-block;
+    color: #fff;
+    background: var(--clr-primary-600);
+    margin: 1em;
+    padding: 1em 2em;
+    border-radius: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    
+    &:hover {
+      background: var(--clr-neutral-600);
+    }
+  }
+  
+  &__cancel-ord {
+    color: var(--clr-neutral-600);
+    opacity: 0.5;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 2em;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
