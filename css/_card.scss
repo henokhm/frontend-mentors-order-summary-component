@@ -1,0 +1,23 @@
+/*
+
+classes:
+
+container
+card
+card__image
+card__title
+card__body
+card__order-details
+  card__music-icon    
+  (Note: it's not required to nest like this --> card__order-details__music-icon)
+  card__plan-type
+  card__plan-cost
+  card__change-plan
+card__cta
+card__cancel-ord
+
+*/
+
+.card {
+  background: var(--clr-primary-600);
+}
